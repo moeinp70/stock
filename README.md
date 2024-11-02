@@ -1,9 +1,11 @@
 # Stock Price Prediction with Financial Data and LSTM Model
 
 **Note:** This project is under active development and enhancement. Code changes may be frequent as improvements are made. Please ensure you are using the latest version of the code and dependencies. If you encounter any issues, consider updating to the latest version or checking the documentation for updates.
+
 # Contributing
-I welcome contributions to enhance the project! If you'd like to contribute feel free to Fork it
+**I welcome contributions to enhance the project! If you'd like to contribute feel free to Fork it.**
 ---
+
 ## Example Output
 
 Below is an example of the predicted vs actual stock price for Microsoft (MSFT) using this model:
