@@ -70,7 +70,6 @@ model = train_lstm_model(X_train, y_train, window_size=60, prediction_horizon=30
 
 
 
-#### Prediction
 
 ### Prediction
 Use the trained model to predict future stock prices.
@@ -86,7 +85,7 @@ predicted_prices = predict_from_date(model, stock_data, specific_date='2024-10-1
 
 The project provides interactive plots to compare actual vs. predicted stock prices. Use the `plot_results` function in `model_training.py` to visualize results.
 
-python
+
 from model_training import plot_results
 
 plot_results(validation_dates, dates_all, y_val_pred, y_val_true, prediction_dates=prediction_dates, y_pred=y_pred)
@@ -102,7 +101,7 @@ Easy-to-understand color-coded lines for each dataset.
 
 ---
 
-### 7. Directory Structure
+### Directory Structure
 
 ```markdown
 ## Directory Structure
@@ -123,6 +122,4 @@ The project files are structured as follows:
 
 ### 8. License
 
-```markdown
-## License
 This project is licensed under the MIT License.
