@@ -39,19 +39,17 @@ The project requires Python 3.7 or above. Please install the dependencies listed
     pip install -r requirements.txt
 3. **API Keys:**:
    ```bash
-  Get your API keys from Finnhub and Yahoo Finance.
-  Add these keys in data_fetching.py, replacing the placeholder values.
+    Get your API keys from Finnhub and Yahoo Finance.
+   Add these keys in data_fetching.py, replacing the placeholder values.
 
 
 
 ---
 
-Usage
+## Usage
 
-#### Data Fetching
 
 ```markdown
-## Usage
 
 ### Data Fetching
 To fetch and preprocess financial data, run `data_fetching.py`. It collects stock prices and financial metrics for the specified stock ticker.
