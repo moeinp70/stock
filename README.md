@@ -65,7 +65,7 @@ To fetch and preprocess financial data, run `data_fetching.py`. It collects stoc
     from data_fetching import get_stock_data, get_financial_data
     stock_data = get_stock_data('MSFT')
     financial_data = get_financial_data('MSFT')
-
+ ```
 
 ### Model Training
 Train the LSTM model using `model_training.py`. It supports both training from scratch and fine-tuning an existing model. Each model is saved for future use.
