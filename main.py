@@ -47,7 +47,7 @@ def set_random_seeds(seed_value=42):
 
 if __name__ == "__main__":
     set_random_seeds(42)
-    stock_ticker = 'APA'
+    stock_ticker = 'MSFT'
     specific_prediction_date = '2024-10-28'
     start_date = '2011-01-01'
 
