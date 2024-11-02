@@ -84,11 +84,9 @@ predicted_prices = predict_from_date(model, stock_data, specific_date='2024-10-1
 
 ### Results and Visualization
 
-## Results and Visualization
-
 The project provides interactive plots to compare actual vs. predicted stock prices. Use the `plot_results` function in `model_training.py` to visualize results.
 
-```python
+python
 from model_training import plot_results
 
 plot_results(validation_dates, dates_all, y_val_pred, y_val_true, prediction_dates=prediction_dates, y_pred=y_pred)
