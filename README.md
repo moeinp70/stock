@@ -123,6 +123,7 @@ The project files are structured as follows:
 
 ---
 
-### 8. License
+## License
 
 This project is licensed under the MIT License.
+
