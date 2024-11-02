@@ -106,13 +106,13 @@ Easy-to-understand color-coded lines for each dataset.
 
 The project files are structured as follows:
 
-.
+**.
 ├── data_fetching.py       # Scripts for fetching financial data
 ├── model_training.py      # LSTM model training and prediction functions
 ├── main.py                # Main script to run the entire workflow
 ├── requirements.txt       # Dependencies for the project
 └── README.md              # Documentation file
-
+**
 
 
 ---
