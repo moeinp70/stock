@@ -49,12 +49,10 @@ The project requires Python 3.7 or above. Please install the dependencies listed
 ## Usage
 
 
-```markdown
 
 ### Data Fetching
 To fetch and preprocess financial data, run `data_fetching.py`. It collects stock prices and financial metrics for the specified stock ticker.
 
-```python
 from data_fetching import get_stock_data, get_financial_data
 
 stock_data = get_stock_data('MSFT')
@@ -62,9 +60,7 @@ financial_data = get_financial_data('MSFT')
 
 
 
-#### Model Training
 
-```markdown
 ### Model Training
 Train the LSTM model using `model_training.py`. It supports both training from scratch and fine-tuning an existing model. Each model is saved for future use.
 
