@@ -69,21 +69,21 @@ To fetch and preprocess financial data, run `data_fetching.py`. It collects stoc
 
 ### Model Training
 Train the LSTM model using `model_training.py`. It supports both training from scratch and fine-tuning an existing model. Each model is saved for future use.
-
+  ```python
 from model_training import train_lstm_model
 
 model = train_lstm_model(X_train, y_train, window_size=60, prediction_horizon=30, epochs=50)
-
+  ```
 
 
 
 ### Prediction
 Use the trained model to predict future stock prices.
-
+  ```python
 from model_training import predict_from_date
 
 predicted_prices = predict_from_date(model, stock_data, specific_date='2024-10-13', prediction_horizon=30)
-
+  ```
 
 ---
 
@@ -91,11 +91,11 @@ predicted_prices = predict_from_date(model, stock_data, specific_date='2024-10-1
 
 The project provides interactive plots to compare actual vs. predicted stock prices. Use the `plot_results` function in `model_training.py` to visualize results.
 
-
+  ```python
 from model_training import plot_results
 
 plot_results(validation_dates, dates_all, y_val_pred, y_val_true, prediction_dates=prediction_dates, y_pred=y_pred)
-
+  ```
 
 ## The visualization includes:
 
