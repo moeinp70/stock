@@ -72,22 +72,18 @@ model = train_lstm_model(X_train, y_train, window_size=60, prediction_horizon=30
 
 #### Prediction
 
-```markdown
 ### Prediction
 Use the trained model to predict future stock prices.
 
-```python
 from model_training import predict_from_date
 
 predicted_prices = predict_from_date(model, stock_data, specific_date='2024-10-13', prediction_horizon=30)
 
 
-
 ---
 
-### 6. Results and Visualization
+### Results and Visualization
 
-```markdown
 ## Results and Visualization
 
 The project provides interactive plots to compare actual vs. predicted stock prices. Use the `plot_results` function in `model_training.py` to visualize results.
