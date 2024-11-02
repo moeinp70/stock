@@ -103,8 +103,6 @@ Easy-to-understand color-coded lines for each dataset.
 
 ### Directory Structure
 
-```markdown
-## Directory Structure
 
 The project files are structured as follows:
 
