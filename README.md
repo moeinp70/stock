@@ -61,11 +61,11 @@ The project is modularized into separate files, making it easy to customize, upd
 ### Data Fetching
 To fetch and preprocess financial data, run `data_fetching.py`. It collects stock prices and financial metrics for the specified stock ticker.
 
-```python
-from data_fetching import get_stock_data, get_financial_data
-
-stock_data = get_stock_data('MSFT')
-financial_data = get_financial_data('MSFT')
+  ```python
+  from data_fetching import get_stock_data, get_financial_data
+    
+    stock_data = get_stock_data('MSFT')
+    financial_data = get_financial_data('MSFT')
 
 
 
