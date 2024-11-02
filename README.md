@@ -106,7 +106,6 @@ Easy-to-understand color-coded lines for each dataset.
 
 The project files are structured as follows:
 
-```plaintext
 .
 ├── data_fetching.py       # Scripts for fetching financial data
 ├── model_training.py      # LSTM model training and prediction functions
