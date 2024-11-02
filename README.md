@@ -93,32 +93,32 @@ The project provides interactive plots to compare actual vs. predicted stock pri
 
   ```python
 from model_training import plot_results
-
+# Example of plotting the results
 plot_results(validation_dates, dates_all, y_val_pred, y_val_true, prediction_dates=prediction_dates, y_pred=y_pred)
   ```
 
 ## The visualization includes:
 
-Actual stock prices during the training period.
-Predicted stock prices for validation and future days.
-Easy-to-understand color-coded lines for each dataset.
+- *Actual stock prices during the training period.
+- *Predicted stock prices for validation and future days.
+- *Easy-to-understand color-coded lines for each dataset.
 
 
 
 ---
 
-### Directory Structure
-
+## Directory Structure
 
 The project files are structured as follows:
 
-**.
+```plaintext
+.
 ├── data_fetching.py       # Scripts for fetching financial data
 ├── model_training.py      # LSTM model training and prediction functions
 ├── main.py                # Main script to run the entire workflow
 ├── requirements.txt       # Dependencies for the project
 └── README.md              # Documentation file
-**
+```
 
 
 ---
