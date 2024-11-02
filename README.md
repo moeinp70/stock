@@ -1,109 +1,141 @@
-Stock Price Prediction with LSTM and Financial Data
-This repository contains a stock price prediction model built using LSTM neural networks. It leverages stock price history, financial data, and a fine-tuning capability to predict future prices.
+# Stock Price Prediction with Financial Data and LSTM Model
 
-Features
-Financial Data Integration: Uses various financial indicators such as revenue, net income, stockholder equity, and more.
-LSTM Model: A deep learning model capable of capturing sequential dependencies.
-Fine-Tuning: Allows fine-tuning an already trained model for better performance without starting from scratch.
-Data Caching: Stores fetched data to prevent redundant API calls, optimizing resources.
-Interactive Plots: Provides interactive plots using Plotly for better visualization and analysis.
-Project Structure
-bash
-Copy code
-.
-├── data_fetching.py         # Handles data fetching for stock price and financial data
-├── model_training.py        # Defines LSTM model, training, and fine-tuning functionality
-├── main.py                  # Main script to orchestrate fetching, training, and prediction
-├── requirements.txt         # Python dependencies
-└── README.md                # Project documentation
-Requirements
-Python 3.7 or later
-TensorFlow
-Pandas
-Matplotlib
-Plotly
-Requests
-finnhub-python (for accessing financial data via Finnhub)
-Scikit-learn
-To install all requirements:
+This project predicts stock prices using historical financial data and LSTM (Long Short-Term Memory) neural networks. It integrates data from various sources, such as Yahoo Finance and Finnhub, to gather historical stock prices and financial reports. The model trains on this data to provide accurate predictions for future stock prices.
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Setup](#setup)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+- [Usage](#usage)
+  - [Data Fetching](#data-fetching)
+  - [Model Training](#model-training)
+  - [Prediction](#prediction)
+- [Results and Visualization](#results-and-visualization)
+- [Directory Structure](#directory-structure)
+- [License](#license)
+## Project Overview
 
-bash
-Copy code
-pip install -r requirements.txt
-Contents of requirements.txt:
+This project leverages financial data to predict stock prices for specific stock tickers. The core of the project is an LSTM model that uses both stock price history and key financial metrics (e.g., revenue, net income, assets) to forecast future prices.
 
-Copy code
-tensorflow
-pandas
-matplotlib
-plotly
-requests
-finnhub-python
-scikit-learn
-yfinance
-Installation
-Clone the repository:
+## Features
+- Fetch historical stock prices and financial data from Yahoo Finance and Finnhub API.
+- Perform sentiment analysis on news headlines related to the selected stock (optional).
+- Train an LSTM model using historical data to predict future stock prices.
+- Save and reuse trained models to avoid retraining on each run.
+- Visualize actual vs. predicted prices interactively.
+## Setup
 
-bash
-Copy code
-git clone https://github.com/yourusername/stock-price-prediction.git
-cd stock-price-prediction
-Install dependencies:
+### Requirements
+The project requires Python 3.7 or above. Please install the dependencies listed in `requirements.txt`.
 
-bash
-Copy code
-pip install -r requirements.txt
-Set up API keys:
+### Installation
+1. **Clone the Repository**:
+   ```bash
+   git clone <repository_url>
+   cd stock-price-prediction
+2. **Install Dependencies: Install the required packages by running:**:
+   ```bash
+    pip install -r requirements.txt
+3. **API Keys:**:
+   ```bash
+  Get your API keys from Finnhub and Yahoo Finance.
+  Add these keys in data_fetching.py, replacing the placeholder values.
 
-Replace the placeholder API keys in data_fetching.py with your own Finnhub API key.
-Sign up for a free Finnhub API key at Finnhub.io.
+
+
+---
+
 Usage
-Run the main script:
 
-To train and predict stock prices, execute:
+#### Data Fetching
 
-bash
-Copy code
-python main.py
-By default, the model saves trained weights and data for each stock ticker.
+```markdown
+## Usage
 
-Customizing Configurations:
+### Data Fetching
+To fetch and preprocess financial data, run `data_fetching.py`. It collects stock prices and financial metrics for the specified stock ticker.
 
-Adjust parameters such as window_size, prediction_horizon, epochs, and others in main.py and model_training.py to optimize for specific use cases.
-Modify the stock_ticker variable in main.py to predict different stocks.
-Using Interactive Plots:
+```python
+from data_fetching import get_stock_data, get_financial_data
 
-The results will be displayed using interactive Plotly graphs.
-Ensure that you have a web browser or an environment that supports interactive plots.
-Explanation of Key Files
-data_fetching.py: Contains functions to fetch and preprocess financial data and stock price data. Implements caching to save data locally and reduce redundant API calls.
+stock_data = get_stock_data('MSFT')
+financial_data = get_financial_data('MSFT')
 
-model_training.py: Builds, trains, and fine-tunes the LSTM model. Supports loading existing models for fine-tuning and includes functions for creating supervised datasets and plotting results with Plotly.
 
-main.py: Entry point that integrates data fetching, model training, prediction, and visualization.
 
-Example Results
-After running the script, results are visualized using interactive Plotly graphs, showing the actual vs. predicted stock prices. Fine-tuning the model helps stabilize predictions for subsequent runs.
+#### Model Training
 
-Contributing
-Fork the repository.
+```markdown
+### Model Training
+Train the LSTM model using `model_training.py`. It supports both training from scratch and fine-tuning an existing model. Each model is saved for future use.
 
-Create a new branch:
+```python
+from model_training import train_lstm_model
 
-bash
-Copy code
-git checkout -b feature-branch
-Make your changes and commit:
+model = train_lstm_model(X_train, y_train, window_size=60, prediction_horizon=30, epochs=50)
 
-bash
-Copy code
-git commit -am 'Add new feature'
-Push to the branch:
 
-bash
-Copy code
-git push origin feature-branch
-Create a new Pull Request.
 
-License
+#### Prediction
+
+```markdown
+### Prediction
+Use the trained model to predict future stock prices.
+
+```python
+from model_training import predict_from_date
+
+predicted_prices = predict_from_date(model, stock_data, specific_date='2024-10-13', prediction_horizon=30)
+
+
+
+---
+
+### 6. Results and Visualization
+
+```markdown
+## Results and Visualization
+
+The project provides interactive plots to compare actual vs. predicted stock prices. Use the `plot_results` function in `model_training.py` to visualize results.
+
+```python
+from model_training import plot_results
+
+plot_results(validation_dates, dates_all, y_val_pred, y_val_true, prediction_dates=prediction_dates, y_pred=y_pred)
+
+
+## The visualization includes:
+
+Actual stock prices during the training period.
+Predicted stock prices for validation and future days.
+Easy-to-understand color-coded lines for each dataset.
+
+
+
+---
+
+### 7. Directory Structure
+
+```markdown
+## Directory Structure
+
+The project files are structured as follows:
+
+```plaintext
+.
+├── data_fetching.py       # Scripts for fetching financial data
+├── model_training.py      # LSTM model training and prediction functions
+├── main.py                # Main script to run the entire workflow
+├── requirements.txt       # Dependencies for the project
+└── README.md              # Documentation file
+
+
+
+---
+
+### 8. License
+
+```markdown
+## License
 This project is licensed under the MIT License.
