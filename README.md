@@ -14,26 +14,36 @@ This project predicts stock prices using historical financial data and LSTM (Lon
 - [Results and Visualization](#results-and-visualization)
 - [Directory Structure](#directory-structure)
 - [License](#license)
+
 ## Project Overview
 
-This project leverages financial data to predict stock prices for specific stock tickers. The core of the project is an LSTM model that uses both stock price history and key financial metrics (e.g., revenue, net income, assets) to forecast future prices.
+This project leverages financial data to predict stock prices for specific stock tickers. The core of the project is an LSTM model that uses both stock price history and key financial metrics (such as revenue, net income, and assets) to forecast future prices. The model is trained using historical data, which helps in creating more accurate predictions.
+
+The project is modularized into separate files, making it easy to customize, update, and fine-tune specific components, such as data fetching or model parameters.
+
 
 ## Features
-- Fetch historical stock prices and financial data from Yahoo Finance and Finnhub API.
-- Perform sentiment analysis on news headlines related to the selected stock (optional).
-- Train an LSTM model using historical data to predict future stock prices.
-- Save and reuse trained models to avoid retraining on each run.
-- Visualize actual vs. predicted prices interactively.
+
+- **Data Collection**: Fetches historical stock prices and key financial data from Yahoo Finance and the Finnhub API.
+- **Sentiment Analysis**: (Optional) Performs sentiment analysis on news headlines related to the selected stock ticker.
+- **LSTM Model for Prediction**: Utilizes an LSTM neural network model to predict future stock prices based on historical data.
+- **Model Persistence**: Saves trained models to allow for reuse, avoiding the need for retraining every time.
+- **Interactive Visualization**: Provides interactive visualizations of actual vs. predicted stock prices, allowing for better insights.
+
+  
 ## Setup
 
 ### Requirements
-The project requires Python 3.7 or above. Please install the dependencies listed in `requirements.txt`.
+- Python 3.7 or above
+- Install the dependencies listed in `requirements.txt`.
 
 ### Installation
+
 1. **Clone the Repository**:
    ```bash
    git clone <repository_url>
    cd stock-price-prediction
+
 2. **Install Dependencies: Install the required packages by running:**:
    ```bash
     pip install -r requirements.txt
@@ -48,15 +58,15 @@ The project requires Python 3.7 or above. Please install the dependencies listed
 
 ## Usage
 
-
-
 ### Data Fetching
 To fetch and preprocess financial data, run `data_fetching.py`. It collects stock prices and financial metrics for the specified stock ticker.
 
+```python
 from data_fetching import get_stock_data, get_financial_data
 
 stock_data = get_stock_data('MSFT')
 financial_data = get_financial_data('MSFT')
+
 
 
 
